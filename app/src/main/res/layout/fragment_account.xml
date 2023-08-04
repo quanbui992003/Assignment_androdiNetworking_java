@@ -44,14 +44,14 @@
             android:layout_marginTop="50dp"
             android:layout_gravity="center"
             android:backgroundTint="@color/orange"/>
-<!--        <Button-->
-<!--            android:id="@+id/delete_account"-->
-<!--            android:layout_width="200dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="xóa tài khoản"-->
-<!--            android:layout_marginTop="50dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:backgroundTint="@color/orange"/>-->
+        <Button
+            android:id="@+id/delete_account"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="xóa tài khoản"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/orange"/>
 
     </LinearLayout>
 
