@@ -22,6 +22,7 @@ public interface Retrofit_Api {
 
     @GET("/product/api/")
     Call<ProductAge> getAllProduct();
+
     @GET("/category/getApi/")
     Call<CategoryAge> getAllCategory();
 
@@ -65,6 +66,18 @@ public interface Retrofit_Api {
     @DELETE("/account/Delete/{id_user}")
     Call<DeleteResponse> deleteAccountById(
             @Path("id_user") int id_user);
+
+    @FormUrlEncoded
+    @POST("/product/updateProduct/")
+    Call<UpdateResponse> updateProduct(
+            @Field("id_product") int id_product, // Replace 'userId' with the correct column name
+            @Field("name") String newName,
+            @Field("price") String price,
+            @Field("description") String description,
+            @Field("image") String image,
+            @Field("quantity") String quantity
+
+    );
 
     @DELETE("/product/deleteAdmin/{id_product}")
     Call<DeleteResponse> deleteProductById(

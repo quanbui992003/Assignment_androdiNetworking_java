@@ -110,7 +110,11 @@ public class Home_Admin extends AppCompatActivity implements id_cate {
         actionButton = findViewById(R.id.Float_add_product);
         recyclerView_admin = findViewById(R.id.RecyclerView_home_admin);
         recyclerView_admin.setLayoutManager(new LinearLayoutManager(getApplication()));
+        productAdapter_admin = new ProductAdapter_Admin(this, productList);
+        recyclerView_admin.setAdapter(productAdapter_admin);
+        productAdapter_admin.notifyDataSetChanged();
         ShowSp();
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -280,6 +284,7 @@ public class Home_Admin extends AppCompatActivity implements id_cate {
                     recyclerView_admin.setAdapter(productAdapter_admin);
                     productAdapter_admin.notifyDataSetChanged();
 
+
                     for (Product product1 : productList){
                         productId = product1.getId_product();
                         Log.e("product", "product :" + productId);
@@ -292,6 +297,8 @@ public class Home_Admin extends AppCompatActivity implements id_cate {
 
 
                 }
+
+
                 //   Toast.makeText(getContext(),"thanh cong ", Toast.LENGTH_LONG).show();
             }
 
