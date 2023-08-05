@@ -5,6 +5,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,17 +17,20 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.assingment_android_networking.Fra2.Home_fra;
 import com.example.assingment_android_networking.Model.DeleteResponse;
 import com.example.assingment_android_networking.Model.Product;
 import com.example.assingment_android_networking.Model.ProductAge;
 import com.example.assingment_android_networking.Model.UpdateResponse;
 import com.example.assingment_android_networking.R;
 import com.example.assingment_android_networking.Retrofit.Retrofit_Api;
+import com.example.assingment_android_networking.activity.updateProduct;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
@@ -84,6 +88,21 @@ public class ProductAdapter_Admin extends RecyclerView.Adapter<ProductAdapter_Ad
             }
         });
 
+        holder.ConstraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, updateProduct.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("name", product.getName());
+                intent.putExtra("price", product.getPrice());
+                intent.putExtra("desc", product.getDescription());
+                intent.putExtra("image", product.getImage());
+                intent.putExtra("quantity", product.getQuantity());
+                context.startActivity(intent);
+
+            }
+        });
+
 
 
 
@@ -99,7 +118,7 @@ public class ProductAdapter_Admin extends RecyclerView.Adapter<ProductAdapter_Ad
         ImageView imageView,imageEdit,imageDelete;
         TextView txtName;
         TextView txtPrice;
-
+        androidx.constraintlayout.widget.ConstraintLayout ConstraintLayout;
         public viewHolder_1(@NonNull View itemView) {
             super(itemView);
 
@@ -109,6 +128,8 @@ public class ProductAdapter_Admin extends RecyclerView.Adapter<ProductAdapter_Ad
             imageDelete = itemView.findViewById(R.id.imageView_delete);
             txtName = itemView.findViewById(R.id.textView_name_admin);
             txtPrice = itemView.findViewById(R.id.textView2_price);
+            ConstraintLayout = itemView.findViewById(R.id.Contrant);
+
 
 
         }

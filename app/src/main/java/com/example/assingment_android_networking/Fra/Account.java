@@ -82,7 +82,7 @@ public class Account extends Fragment {
     private void Dialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
         LayoutInflater inflater = LayoutInflater.from(requireContext());
-        View view = inflater.inflate(R.layout.layout_update_product, null);
+        View view = inflater.inflate(R.layout.layout_update, null);
         builder.setView(view);
 
         EditText editTextName = view.findViewById(R.id.edt_update_userName);

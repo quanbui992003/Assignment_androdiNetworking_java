@@ -6,6 +6,7 @@
     android:layout_height="150dp"
     android:layout_margin="20dp"
     android:layout_marginTop="10dp"
+    android:id="@+id/Contrant"
     android:background="@android:color/darker_gray">
 
     <ImageView

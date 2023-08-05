@@ -4,10 +4,15 @@ public class UpdateResponse {
 
     private boolean success;
     private String message;
+    private String userId;
 
-    public UpdateResponse(boolean success, String message) {
+    public UpdateResponse(boolean success, String message, String userId) {
         this.success = success;
         this.message = message;
+        this.userId = userId;
+    }
+
+    public UpdateResponse() {
     }
 
     public boolean isSuccess() {
@@ -24,5 +29,13 @@ public class UpdateResponse {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

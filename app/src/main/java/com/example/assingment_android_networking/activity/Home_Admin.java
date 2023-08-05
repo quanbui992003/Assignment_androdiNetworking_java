@@ -201,7 +201,6 @@ public class Home_Admin extends AppCompatActivity implements id_cate {
             }
         });
 
-
         AlertDialog dialog = builder.create();
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -216,7 +215,7 @@ public class Home_Admin extends AppCompatActivity implements id_cate {
 
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://192.168.1.182:4000")
+                        .baseUrl("http://10.24.28.57:4000")
                         .client(client)
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
@@ -263,7 +262,7 @@ public class Home_Admin extends AppCompatActivity implements id_cate {
     private void ShowSp() {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.182:4000")
+                .baseUrl("http://10.24.28.57:4000")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
